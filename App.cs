@@ -6,9 +6,9 @@ public class App
         {
             case 1:
                 if (Args.Count() == 2)
-                    D1.Run(Args[1]);
+                    D01.Run("inputs/" + Args[1]);
                 else
-                    D1.Run("inputs/01");
+                    D01.Run("inputs/01");
                 break;
             default:
                 Console.WriteLine($"Invalid day {Args[0]}");

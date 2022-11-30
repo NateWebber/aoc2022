@@ -1,4 +1,4 @@
-public class D1
+public class D01
 {
     static int DAY_NUM = 1; //TODO Change me from 0 when using this template
     static string[] inputLines = { };
