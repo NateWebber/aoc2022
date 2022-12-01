@@ -11,18 +11,13 @@ public class Template
             Console.WriteLine($"Error reading input from {inPath}, exiting...");
             return;
         }
-        Part1();
-        Part2();
+        Solve();
         Console.WriteLine($"Day {DAY_NUM} completed!");
     }
 
-    private static void Part1()
+    private static void Solve()
     {
-        Console.WriteLine("Part 1 not yet implemented...");
-    }
-    private static void Part2()
-    {
-        Console.WriteLine("Part 2 not yet implemented...");
+
     }
 
 }
