@@ -10,6 +10,12 @@ public class App
                 else
                     D01.Run("inputs/01");
                 break;
+            case 2:
+                if (Args.Count() == 2)
+                    D02.Run("inputs/" + Args[1]);
+                else
+                    D02.Run("inputs/01");
+                break;
             default:
                 Console.WriteLine($"Invalid day {Args[0]}");
                 break;
