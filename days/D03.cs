@@ -1,8 +1,8 @@
-public class Template : Day
+public class D03
 {
-    static int DAY_NUM = 0; //TODO Change me when using this template
+    static int DAY_NUM = 3; //TODO Change me when using this template
     static string[] inputLines = { };
-    public void Run(string inPath)
+    public static void Run(string inPath)
     {
         Console.WriteLine($"Day {DAY_NUM} selected!");
         inputLines = File.ReadAllLines(inPath);

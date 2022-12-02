@@ -2,7 +2,24 @@ public class App
 {
     public static void Main(string[] Args)
     {
-        switch (int.Parse(Args[0]))
+        if (Args.Length == 0)
+        {
+            Console.WriteLine("Error: Please specify a day");
+            return;
+        }
+        string dayString = Args[0];
+        if (dayString.Length == 1) //account for single digit numbers
+            dayString = "0" + dayString;
+
+        //refelection is neat but I don't really know how to do it properly just yet
+        Type? dayType = Type.GetType($"D{Args[0]}");
+        Day? dayInstance = null;
+        if (dayType != null)
+            dayInstance = (Day)Activator.CreateInstance(dayType);
+        if (dayInstance != null)
+            dayInstance.Run($"inputs/{dayString}");
+
+        /*switch (int.Parse(Args[0]))
         {
             case 1:
                 if (Args.Count() == 2)
@@ -14,11 +31,19 @@ public class App
                 if (Args.Count() == 2)
                     D02.Run("inputs/" + Args[1]);
                 else
-                    D02.Run("inputs/01");
+                    D02.Run("inputs/02");
+                break;
+            case 3:
+                if (Args.Count() == 2)
+                    D03.Run("inputs/" + Args[1]);
+                else
+                    D03.Run("inputs/02");
                 break;
             default:
                 Console.WriteLine($"Invalid day {Args[0]}");
                 break;
-        }
+        }*/
+
     }
+
 }
