@@ -69,17 +69,16 @@ public class D03 : Day
         /*
         * ASCII values for uppercase letters are 65 (A) -> 90 (Z)
         * ASCII values for lowercase letters are 97 (a) -> 122 (z)
-        * So if we just quickly cast the char to an int, we can figure out if it's upper/lowercase,
+        * So we can figure out if it's upper/lowercase using those ranges,
         * and then subtract the right amount to make uppercase worth 27 -> 52, and lowercase worth 1 -> 26
         */
-        int castedChar = (int)c;
-        if (castedChar >= 65 && castedChar <= 90) //UPPERCASE LETTER
+        if (c >= 65 && c <= 90) //UPPERCASE LETTER
         {
-            return castedChar - 38; //A = 27, B = 28, ...
+            return c - 38; //A = 27, B = 28, ...
         }
-        else if (castedChar >= 97 && castedChar <= 122) //lowercase letter
+        else if (c >= 97 && c <= 122) //lowercase letter
         {
-            return castedChar - 96; //a = 1, b = 2, ...
+            return c - 96; //a = 1, b = 2, ...
         }
         else
         {
