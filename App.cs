@@ -12,12 +12,24 @@ public class App
             dayString = "0" + dayString;
 
         //refelection is neat but I don't really know how to do it properly just yet
-        Type? dayType = Type.GetType($"D{Args[0]}");
+        Console.WriteLine($"trying to get type D{dayString}");
+        Type? dayType = Type.GetType($"D{dayString}");
         Day? dayInstance = null;
         if (dayType != null)
             dayInstance = (Day)Activator.CreateInstance(dayType);
         if (dayInstance != null)
-            dayInstance.Run($"inputs/{dayString}");
+        {
+            if (Args.Length == 2)
+            {
+                dayInstance.Run($"inputs/{Args[1]}");
+            }
+            else
+            {
+                dayInstance.Run($"inputs/{dayString}");
+            }
+        }
+
+
 
         /*switch (int.Parse(Args[0]))
         {
