@@ -21,11 +21,11 @@ public class App
         {
             if (Args.Length == 2)
             {
-                dayInstance.Run($"inputs/{Args[1]}");
+                dayInstance.Run($"inputs/{Args[1]}.txt");
             }
             else
             {
-                dayInstance.Run($"inputs/{dayString}");
+                dayInstance.Run($"inputs/{dayString}.txt");
             }
         }
 
