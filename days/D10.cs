@@ -65,7 +65,7 @@ public class D10 : Day
             Console.WriteLine($"during cycle {clock + 1} register = {registerValue}");
             signalSum += (clock + 1) * registerValue;
         }
-        
+
     }
 
     private static void drawOutput()
@@ -74,7 +74,17 @@ public class D10 : Day
         {
             if (i % 40 == 0)
                 Console.WriteLine();
+            if (CRTstring[i] == '#')
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            Console.Write(" ");
             Console.Write(CRTstring[i]);
+            //Console.Write(" ");
         }
         Console.WriteLine();
         Console.WriteLine();
